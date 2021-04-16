@@ -4,7 +4,13 @@
       <h1>{{ messages }} {{ name }}</h1>
     </div>
     <div class="row">
-      <user-list :users="usersG" :showDetail="false"></user-list>
+      <user-list :users="usersG" :showDetail="false">
+        <template slot-scope="{ userInfo }">
+          <div>
+            <span>{{ userInfo.username }}</span>
+          </div>
+        </template>
+      </user-list>
     </div>
   </div>
 </template>
