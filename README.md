@@ -2,6 +2,20 @@
 Crea una aplicación funcional de usuarios donde podras ver temas como consumo de servicios, uso del manejo de estados con vuex,
 navegación entre rutas y rutas protegidas.
 
+### instalacion
+https://nodejs.org/es/
+
+###
+npm install -g @vue/cli
+
+### inicializar proyecto
+vue create "Nombre de tu proyecto"
+
+### agregar dependencias
+vue add vuex
+vue add router
+
+
 ### Configuración del proyecto
 npm install
 
@@ -16,9 +30,6 @@ o
 
 npm install -D sass-loader@10.0.5 node-sass
 
-### agregar dependencias
-vue add vuex
-vue add router
 
 
 
