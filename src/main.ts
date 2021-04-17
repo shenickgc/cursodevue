@@ -6,7 +6,7 @@ import router from './router'
 import userList from "@/components/userList.vue"
 
 Vue.config.productionTip = false
-Vue.component(userList)
+Vue.component('userList', userList)
 
 new Vue({
   store,

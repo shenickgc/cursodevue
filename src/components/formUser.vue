@@ -58,8 +58,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { User } from '@/types/User'
+import Vue from 'vue'
+export default Vue.extend({
   components: {},
   props: [],
 
@@ -73,15 +75,15 @@ export default {
   },
 
   computed: {
-    ruleName() {
+    ruleName() : boolean {
       return this.name.length < 5 ? false : true
     },
-    ruleEmail() {
+    ruleEmail() : boolean {
       let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
       return emailRegex.test(this.email)
     },
-    enableButton() {
-      return this.ruleName && this.ruleEmail ? true : false
+    enableButton() : boolean {
+      return this.ruleName && this.ruleEmail
     },
   },
   created() {
@@ -89,7 +91,8 @@ export default {
   },
 
   mounted() {
-    console.log(this.$refs.nameInput.className)
+    const nameInput = this.$refs.nameInput as HTMLInputElement
+    console.log(nameInput.className)
   },
 
   methods: {
@@ -97,7 +100,7 @@ export default {
       let newUser = {
         name: this.name,
         email: this.email,
-      }
+      } as User
       this.$emit("addUserObj", newUser)
       this.name = ""
       this.email = ""
@@ -105,7 +108,7 @@ export default {
   },
 
   watch: {},
-}
+})
 </script>
 
 <style></style>

@@ -15,10 +15,11 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import { mapGetters } from "vuex"
 import UserList from "../components/userList.vue"
-export default {
+export default Vue.extend({
   components: {
     UserList,
     // userList: () => import("@/components/userList.vue"),
@@ -47,7 +48,7 @@ export default {
   methods: {},
 
   watch: {},
-}
+})
 </script>
 
 <style></style>

@@ -36,7 +36,7 @@ const router = new VueRouter({
 //interceptor de rutas
 router.beforeEach((to, from, next) => {
   const rutaProtegida = to.matched.some(record => record.meta.requiresAuthAdmin)
-  let userHasLogin = true
+  const userHasLogin = true
   if (rutaProtegida &&  !userHasLogin) {
     next({ name: 'Home' })
   } else {

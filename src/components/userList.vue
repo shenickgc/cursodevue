@@ -40,17 +40,18 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue, { PropType } from 'vue'
+import { User } from '@/types/User'
+export default Vue.extend({
   components: {},
   props: {
     users: {
-      type: Array,
-      required: true,
+      type: Array as PropType<User[]>
     },
     showDetail: {
       type: Boolean,
-      require: true,
+      required: true,
     },
   },
 
@@ -69,18 +70,18 @@ export default {
   created() {},
 
   methods: {
-    goToDetail({ name }) {
+    goToDetail({ name }: User) {
       this.$router.push({
         name: "userdetail",
         params: {
-          name: name,
+          name,
         },
       })
     },
   },
 
   watch: {},
-}
+})
 </script>
 
 <style>
