@@ -29,22 +29,14 @@ export default {
   props: [],
   data() {
     return {
-      hiddenTittle: false,
+     
     }
   },
   computed: {},
   mounted() {},
   created() {},
   methods: {},
-  watch: {
-    $route(newVal, oldVal) {
-      console.log("old", oldVal)
-      console.log("new", newVal)
-      if (newVal.name === "admin") {
-        this.hiddenTittle = true
-      }
-    },
-  },
+  watch: {},
 }
 </script>
 ~~~
